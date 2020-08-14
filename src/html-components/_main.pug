@@ -1,0 +1,132 @@
+-
+    const advantages = [
+        {   
+            img: 'img/bathtub@1X.png',
+            web: 'img/bathtub@1X.webp',
+            text: 'Идейные соображения высшего порядка, а также постоянный количественный рост',
+        },  
+        {   
+            img: 'img/hanger@1X.png',
+            webp: 'img/hanger@1X.webp',
+            text: 'Значимость этих проблем настолько очевидна, что вопрос остается открытым',
+        },
+        {   
+            img: 'img/heating@1X.png',
+            webp: 'img/heating@1X.webp',
+            text: 'Таким образом реализация плановых заданий играет важную роль для понимания',
+        },
+        {   
+            img: 'img/hotel-key@1X.png',
+            webp: 'img/hotel-key@1X.webp',
+            text: 'Повседневная практика показывает, что сложившаяся структура организации',
+        },
+        {   
+            img: 'img/parking@1X.png',
+            webp: 'img/parking@1X.webp',
+            text: 'Равным образом рамки и место обучения кадров способствует подготовки сотрудника',
+        },
+        {   
+            img: 'img/reception@1X.png',
+            webp: 'img/reception@1X.webp',
+            text: 'Консультация с активом влечет за собой процесс внедрения услуг нашего сервиса',
+        },
+        {   
+            img: 'img/security-box@1X.png',
+            webp: 'img/security-box@1X.webp',
+            text: 'Повседневная практика показывает, что дальнейшее развитие различных форм',
+        },
+        {   
+            img: 'img/swimming-pool@1X.png',
+            webp: 'img/swimming-pool@1X.webp',   
+            text: 'Значимость этого настолько очевидна, что консультация наших экспертов помогает',
+        },
+    ];
+
+main.main
+    .container
+        .row
+            .col-md-6.col-sm-12
+                section.reservation
+                    h2.reservation__title Быстрая бронь
+                    form.form.form-main(action="#")
+                        input.form-main__input(type="text", name="city" placeholder="Город")
+                        input.form-main__input(type="text", name="category" placeholder="Категория номера")
+                        input.form-main__input(type="text", name="date" placeholder="Дата заселения")
+                        input.form-main__input(type="text", name="night-counts" placeholder="Количество ночей")
+                        input.form-main__input(type="text", name="guest-counts" placeholder="Количество гостей")
+                        .container
+                            .row
+                                .col-md-4.col-sm-12
+                                    button.form-main__btn Найти номер
+                                .col-md-auto.col-sm-12.align-self-center
+                                    .offers-count
+                                        span.offers-count__number 9 756
+                                        span.offers-count__text предложений доступно
+            .col-md-6.col-sm-12
+                section.offers
+                    h2.offers__title Спецпредложение
+                    .offer-block
+                        h3.offer-block__title Номера категории люкс
+                        span.offer-block__price от 5 000 р
+                        a.offer-block__link(href="#") Подробнее
+                        .offer-block__img-wrap
+                            picture
+                                source(type="image/webp", data-src="img/22@1X.webp")
+                                img.lazy.offer-block__img(alt="Спецпредложение", data-src="img/22@1X.jpg")
+        .row
+            .col-md-10.col-sm-12
+                section.about
+                    h2.about__title О нас
+                    p.about__text Идейные соображения высшего порядка, а также сложившаяся структура организации влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям. Равным образом сложившаяся структура организации требуют определения и уточнения существенных финансовых и административных условий.
+        section.services
+            h2.services__title Услуги
+            ul.service__list
+                .row
+                    .col-md-6
+                        li.services-item
+                            picture
+                                source(type="image/webp", data-src="img/10@1X.webp")
+                                img.lazy.services-item__img(alt="Эксклюзивное обслуживание", data-src="img/10@1X.jpg")
+                            .services-item__wrap
+                                h3.services-item__title
+                                    a.services-item__link(href="#") Эксклюзивное обслуживание
+                                p.services-item__text Равным образом постоянный количественный рост и сфера нашей акт
+                    .col-md-6
+                        li.services-item
+                            picture
+                                source(type="image/webp", data-src="img/15@1X.webp")
+                                img.lazy.services-item__img(alt="Аренда банкетных залов", data-src="img/15@1X.jpg")
+                            .services-item__wrap
+                                h3.services-item__title
+                                    a.services-item__link(href="#") Аренда банкетных залов
+                                p.services-item__text Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм.
+                    .col-md-6
+                        li.services-item
+                            picture
+                                source(type="image/webp", data-src="img/12@1X.webp")
+                                img.lazy.services-item__img(alt="Сауны, бассейны, бани, фитнес-залы", data-src="img/12@1X.jpg")
+                            .services-item__wrap
+                                h3.services-item__title
+                                    a.services-item__link(href="#") Сауны, бассейны, бани, фитнес-залы
+                                p.services-item__text Не следует, однако забывать, что начало повседневной работы по формированию позиции
+                    .col-md-6
+                        li.services-item
+                            picture
+                                source(type="image/webp", data-src="img/carlo-d-agnolo-aFxSh_l4fbY-unsplash@1X.webp")
+                                img.lazy.services-item__img(alt="Охраняемые автомобильные стоянки", data-src="img/carlo-d-agnolo-aFxSh_l4fbY-unsplash@1X.png")
+                            .services-item__wrap
+                                h3.services-item__title
+                                    a.services-item__link(href="#") Охраняемые автомобильные стоянки
+                                p.services-item__text Не следует, однако забывать, что начало повседневной работы по формированию позиции
+        section.advantages
+            h2.advantages__title Преимущества
+            ul.advantages__list
+                .row
+                    each item in advantages
+                        .col-md-3.col-sm-6.justify-content-center
+                            li.advantages-item
+                                picture
+                                    source(type="image/webp", data-src=`${item.webp}`)
+                                    img.lazy.advantages-item__img(alt=`${item.text}`, data-src=`${item.img}`)
+                                p.advantages-item__text #{item.text}
+

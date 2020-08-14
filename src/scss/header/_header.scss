@@ -1,0 +1,175 @@
+.top-bar {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    @media only screen and (max-width: 768px) {
+        padding-top: 15px;
+        margin-bottom: 15px;
+    }
+    &__logo {
+        @media only screen and (max-width: 768px) {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+
+    &__contacts {
+        display: block;
+        font-size: 22px;
+        font-weight: 800;
+        color: #666;
+        @media only screen and (max-width: 992px) {
+            font-size: 18px;
+        }
+        @media only screen and (max-width: 768px) {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+
+    &__login {
+        display: block;
+        font-size: 16px;
+        color: #CC9933;
+        text-align: right;
+        @media only screen and (max-width: 768px) {
+            text-align: center;
+        }
+    }
+}
+
+.nav-container {
+    padding: 11px 20px;
+    background: #fff;
+    @include border-rad(12px);
+    @media only screen and (max-width: 768px) {
+        min-height: 50px;
+    }
+}
+
+.menu {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        
+        @media only screen and (max-width: 768px) {
+            position: absolute;
+            top: 38px;
+            left: 0px;
+            z-index: 1;
+            display: none;
+            width: 100%;
+            background: #fff;
+        }
+    }
+
+    &__link {
+        &:hover {
+            @include hover-default(#ada6a6,.3s)
+        }
+    }
+}
+
+.form {
+    position: relative;
+    &__input {
+        position: relative;
+        width: 335px;
+        padding: 17px;
+        background: #f1f1f1;
+        border: none;
+        border-radius: 16px;
+    }
+
+    &__btn {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        background: url('../img/search.png');
+        background-size: contain;
+    }
+}
+
+.form-header {
+    text-align: right;
+    @media only screen and (max-width: 1024px) {
+        display: none;
+    }
+    @media only screen and (max-width: 768px) {
+        display: block;
+    }
+    &__input {
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        @media only screen and (max-width: 768px) {
+            top: 5px;
+            left: 0;
+        }
+    }
+}
+
+.burger-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 31px;
+    height: 29px;
+    @media only screen and (max-width: 768px) {
+       display: block;
+    }
+
+    &:before {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 22px;
+        height: 20px;
+        content: '';
+        border: 3px solid #666;
+        border-right: 0;
+        border-left: 0;
+        @include transition-ease(all, .3s);
+    }
+
+    &:after {
+        position: absolute;
+        top: 14px;
+        left: 5px;
+        width: 22px;
+        content: '';
+        border-top: 3px solid #666;
+        @include transition-ease(all, .3s);
+    }
+
+    &.burger-btn--active {
+        &:before {
+            position: absolute;
+            top: 12px;
+            left: 5px;
+            width: 22px;
+            height: 0;
+            content: '';
+            border-bottom: 0;
+            @include transform-rotate(45deg);
+            @include transition-ease(all, .3s);
+        }
+    
+        &:after {
+            position: absolute;
+            top: 12px;
+            left: 5px;
+            width: 22px;
+            height: 0;
+            content: '';
+            @include transform-rotate(-45deg);
+            @include transition-ease(all, .3s);
+        }
+    }
+}
