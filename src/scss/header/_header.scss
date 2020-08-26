@@ -28,10 +28,12 @@
 
     &__login {
         display: block;
+        margin-bottom: 10px;
         font-size: 16px;
         color: #CC9933;
         text-align: right;
         @media only screen and (max-width: 768px) {
+            margin-bottom: 0;
             text-align: center;
         }
     }

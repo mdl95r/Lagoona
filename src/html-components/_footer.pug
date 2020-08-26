@@ -1,0 +1,22 @@
+.container.container-footer
+    footer.footer
+        .row
+            .col-lg-4
+                p.footer__text © 2012-2020 Управляющая компания Объединенной сети «Лагуна Хотелс»
+                p.footer__text Представленная на сайте информация носит справочный характер и не является публичной офертой
+                a.footer__link(href="#") Политика конфиденциальности
+            .col-lg-6
+                p.footer__text 11710, улица Юности, дом 5 строение 4, офис 2
+                .footer__tel-wrap
+                    a.footer__link(href="tel:+74995356434") +7 (499) 535-64-34
+                    a.footer__link(href="tel:+74950050544") +7 (495) 005-05-44
+                a.footer__link(href="mailto:lg.oona@mail.ru ") lg.oona@mail.ru 
+                a.footer__link(href="mailto:hotels.ln@mail.ru") hotels.ln@mail.ru
+                picture
+                    source(type="image/webp", data-src="img/logo-footer.webp")
+                    img.lazy.footer__logo(alt="Логотип в футере", data-src="img/logo-footer.png")
+            .col-lg-2
+                ul.socials-list
+                    each social in ['tripadvisor.ru', 'twitter.com', 'ru-ru.facebook.com', 'vk.com', 'google.com']
+                        li.socials-list__item
+                            a.socials-list__link(href=`https://${social}` target="blank")

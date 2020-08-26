@@ -1,0 +1,74 @@
+.footer {
+    position: relative;
+    padding: 50px;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #fff;
+    background: #333;
+    @media only screen and (max-width: 768px) {
+        padding: 20px;
+    }
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__link {
+        display: block;
+        color: #c93;
+    }
+
+    &__tel-wrap {
+        margin-bottom: 30px;
+    }
+
+    &__logo {
+        position: absolute;
+        bottom: -50px;
+        left: 269px;
+        @media only screen and (max-width: 992px) {
+            display: none;
+        }
+    }
+}
+
+.container-footer {
+    @media only screen and (max-width: 768px) {
+        padding: 0 !important;
+    }
+}
+
+.socials-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media only screen and (max-width: 992px) {
+        flex-direction: row;
+    }
+    &__item {
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+        @media only screen and (max-width: 992px) {
+            margin: 10px 20px 0 0;
+        }
+        &:nth-child(1) {
+            background-image: url('../img/tripadvisor.png');
+        }
+        &:nth-child(2) {
+            background-image: url('../img/twitter.png');
+        }
+        &:nth-child(3) {
+            background-image: url('../img/facebook.png');
+        }
+        &:nth-child(4) {
+            background-image: url('../img/social-vk.png');
+        }
+        &:nth-child(5) {
+            background-image: url('../img/google-plus-social.png');
+        }
+    }
+    &__link {
+        display: block;
+        width: 25px;
+        height: 25px;
+    }
+}

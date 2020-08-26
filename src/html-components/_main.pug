@@ -1,47 +1,4 @@
--
-    const advantages = [
-        {   
-            img: 'img/bathtub@1X.png',
-            web: 'img/bathtub@1X.webp',
-            text: 'Идейные соображения высшего порядка, а также постоянный количественный рост',
-        },  
-        {   
-            img: 'img/hanger@1X.png',
-            webp: 'img/hanger@1X.webp',
-            text: 'Значимость этих проблем настолько очевидна, что вопрос остается открытым',
-        },
-        {   
-            img: 'img/heating@1X.png',
-            webp: 'img/heating@1X.webp',
-            text: 'Таким образом реализация плановых заданий играет важную роль для понимания',
-        },
-        {   
-            img: 'img/hotel-key@1X.png',
-            webp: 'img/hotel-key@1X.webp',
-            text: 'Повседневная практика показывает, что сложившаяся структура организации',
-        },
-        {   
-            img: 'img/parking@1X.png',
-            webp: 'img/parking@1X.webp',
-            text: 'Равным образом рамки и место обучения кадров способствует подготовки сотрудника',
-        },
-        {   
-            img: 'img/reception@1X.png',
-            webp: 'img/reception@1X.webp',
-            text: 'Консультация с активом влечет за собой процесс внедрения услуг нашего сервиса',
-        },
-        {   
-            img: 'img/security-box@1X.png',
-            webp: 'img/security-box@1X.webp',
-            text: 'Повседневная практика показывает, что дальнейшее развитие различных форм',
-        },
-        {   
-            img: 'img/swimming-pool@1X.png',
-            webp: 'img/swimming-pool@1X.webp',   
-            text: 'Значимость этого настолько очевидна, что консультация наших экспертов помогает',
-        },
-    ];
-
+include _data.pug
 main.main
     .container
         .row
@@ -49,11 +6,8 @@ main.main
                 section.reservation
                     h2.reservation__title Быстрая бронь
                     form.form.form-main(action="#")
-                        input.form-main__input(type="text", name="city" placeholder="Город")
-                        input.form-main__input(type="text", name="category" placeholder="Категория номера")
-                        input.form-main__input(type="text", name="date" placeholder="Дата заселения")
-                        input.form-main__input(type="text", name="night-counts" placeholder="Количество ночей")
-                        input.form-main__input(type="text", name="guest-counts" placeholder="Количество гостей")
+                        each input in inputsReservation
+                            input.form-main__input(type="text", name=`${input.name}` placeholder=`${input.placeholder}`)
                         .container
                             .row
                                 .col-md-4.col-sm-12
@@ -82,51 +36,102 @@ main.main
             h2.services__title Услуги
             ul.service__list
                 .row
-                    .col-md-6
-                        li.services-item
-                            picture
-                                source(type="image/webp", data-src="img/10@1X.webp")
-                                img.lazy.services-item__img(alt="Эксклюзивное обслуживание", data-src="img/10@1X.jpg")
-                            .services-item__wrap
-                                h3.services-item__title
-                                    a.services-item__link(href="#") Эксклюзивное обслуживание
-                                p.services-item__text Равным образом постоянный количественный рост и сфера нашей акт
-                    .col-md-6
-                        li.services-item
-                            picture
-                                source(type="image/webp", data-src="img/15@1X.webp")
-                                img.lazy.services-item__img(alt="Аренда банкетных залов", data-src="img/15@1X.jpg")
-                            .services-item__wrap
-                                h3.services-item__title
-                                    a.services-item__link(href="#") Аренда банкетных залов
-                                p.services-item__text Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм.
-                    .col-md-6
-                        li.services-item
-                            picture
-                                source(type="image/webp", data-src="img/12@1X.webp")
-                                img.lazy.services-item__img(alt="Сауны, бассейны, бани, фитнес-залы", data-src="img/12@1X.jpg")
-                            .services-item__wrap
-                                h3.services-item__title
-                                    a.services-item__link(href="#") Сауны, бассейны, бани, фитнес-залы
-                                p.services-item__text Не следует, однако забывать, что начало повседневной работы по формированию позиции
-                    .col-md-6
-                        li.services-item
-                            picture
-                                source(type="image/webp", data-src="img/carlo-d-agnolo-aFxSh_l4fbY-unsplash@1X.webp")
-                                img.lazy.services-item__img(alt="Охраняемые автомобильные стоянки", data-src="img/carlo-d-agnolo-aFxSh_l4fbY-unsplash@1X.png")
-                            .services-item__wrap
-                                h3.services-item__title
-                                    a.services-item__link(href="#") Охраняемые автомобильные стоянки
-                                p.services-item__text Не следует, однако забывать, что начало повседневной работы по формированию позиции
+                    each service in services
+                        .col-md-6
+                            li.services-item
+                                picture
+                                    source(type="image/webp", data-src=`${service.img}.webp`)
+                                    img.lazy.services-item__img(alt=`${service.link}`, data-src=`${service.img}.jpg`)
+                                .services-item__wrap
+                                    h3.services-item__title
+                                        a.services-item__link(href="#") #{service.link}
+                                    p.services-item__text #{service.text}
         section.advantages
             h2.advantages__title Преимущества
             ul.advantages__list
                 .row
                     each item in advantages
-                        .col-md-3.col-sm-6.justify-content-center
+                        .col-lg-3.col-md-6.justify-content-center
                             li.advantages-item
                                 picture
-                                    source(type="image/webp", data-src=`${item.webp}`)
-                                    img.lazy.advantages-item__img(alt=`${item.text}`, data-src=`${item.img}`)
+                                    source(type="image/webp", data-src=`${item.img}.webp`)
+                                    img.lazy.advantages-item__img(alt=`${item.text}`, data-src=`${item.img}.png`)
                                 p.advantages-item__text #{item.text}
-
+        section.placement
+            h2.placement__title Размещение
+            ul.placement__list
+                .row
+                    each item in placement
+                        .col-lg-4.col-md-6
+                            li.placement-item
+                                picture
+                                    source(type="image/webp", data-src=`${item.img}.webp`)
+                                    img.lazy.placement-item__img(alt=`${item.title}`, data-src=`${item.img}.jpg`)
+                                .placement-wrapper
+                                    .row
+                                        .col-md-7
+                                            .placement-price #{item.price}
+                                        .col-md-5.align-self-center
+                                            .placement-stars(aria-label="Рейтинг отеля", data-total-value="0")
+                                                .placement-stars__item(aria-label='Ужасно', data-item-value="5") ★
+                                                .placement-stars__item(aria-label='Плохо', data-item-value="4") ★
+                                                .placement-stars__item(aria-label='Удовлетворительно', data-item-value="3") ★
+                                                .placement-stars__item(aria-label='Хорошо', data-item-value="2") ★
+                                                .placement-stars__item(aria-label='Отлично', data-item-value="1") ★
+                                    .placement-item__title #{item.title}
+                                    .placement-item__location #{item.location}
+                                    a.placement-item__btn(href="#") Номера
+                    .col-lg-4.col-md-6
+                        li.placement-item
+                            picture
+                                source(type="image/webp", data-src="img/41.webp")
+                                img.lazy.placement-item__img(alt="Подробнее", data-src="img/41.jpg")
+                                .placement-link-wrap
+                                    a.placement-item__link(href="#") Посмотреть все варианты
+        section.contacts
+            h2.contacts__title Контакты
+            .row
+                .col-md-5
+                    .contacts-info
+                        .contacts-info__wrap
+                            .row
+                                .col-lg-4
+                                    h3.contacts-info__title Адрес
+                                .col-lg-8
+                                    p.contacts-info__text Москва, улица Юности, дом 5 строение 4, офис 2
+                        .contacts-info__wrap
+                            .row
+                                .col-lg-4
+                                    h3.contacts-info__title Телефоны
+                                .col-lg-8
+                                    a.contacts-info__link.contacts-info__tel(href="tel:+74995356434") +7 (499) 535-64-34
+                                    a.contacts-info__link.contacts-info__tel(href="tel:+74950050544") +7 (495) 005-05-44
+                        .contacts-info__wrap
+                            .row
+                                .col-lg-4
+                                    h3.contacts-info__title E-mail
+                                .col-lg-8
+                                    .contacts-info__link-wrap
+                                        a.contacts-info__link(href="mailto:lg.oona@mail.ru") lg.oona@mail.ru
+                                        span.contacts-info__text.contacts-info__text--gray  по вопросам бронирования
+                                    .contacts-info__link-wrap
+                                        a.contacts-info__link(href="mailto:hotels.ln@mail.ru") hotels.ln@mail.ru
+                                        span.contacts-info__text.contacts-info__text--gray  по вопросам сотрудничества
+                        .contacts-info__wrap
+                            .row
+                                .col-lg-4
+                                    h3.contacts-info__title График
+                                .col-lg-8
+                                    p.contacts-info__text Понедельник - пятница
+                                    p.contacts-info__text с 10:00 до 19:00
+                        .row
+                            .col-lg-6
+                                button.form-main__btn.form-main__btn--white Построить маршрут
+                .col-md-7.align-self-center
+                    .write-us
+                        h2.write-us__title Напишите нам
+                        form.form.form-main.form-write-us(action="#")
+                            each input in inputsContacts
+                                input.form-main__input.form-write-us__input(type=`${input.type}`, name=`${input.name}` placeholder=`${input.placeholder}`)
+                            .form-write-us__btn-wrap
+                                button.form-main__btn.form-write-us__btn Отправить

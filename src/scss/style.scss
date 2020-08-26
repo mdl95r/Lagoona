@@ -1,11 +1,8 @@
 @import '_vars';
 @import '_mixins';
-// @import '_animations';
 @import './header/header';
+@import './footer/footer';
 @import './main/main';
-// @import '_sort-bar';
-// @import '_card';
-// @import '_footer';
 
 *, *::after, *::before {
     box-sizing: border-box;

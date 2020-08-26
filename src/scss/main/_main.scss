@@ -27,43 +27,56 @@
             color: rgb(175, 175, 175);
         }
     }
+}
 
-    .form-main {
-        &__input {
-            display: block;
-            width: 429px;
-            min-height: 45px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 10px;    
-            &::-webkit-input-placeholder,
-            &::-moz-placeholder,
-            &::placeholder,
-            &:-ms-input-placeholder {
-                color: rgb(175, 175, 175);
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-            @media only screen and (max-width: 992px) {
-                width: 100%;
-            }
+.form-main {
+    &__input {
+        display: block;
+        width: 429px;
+        min-height: 45px;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 10px;    
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &::placeholder,
+        &:-ms-input-placeholder {
+            color: rgb(175, 175, 175);
         }
-    
-        &__btn {
-            width: 130px;
-            padding: 15px;
-            font-weight: 800;
-            color: #fff;
-            background: $secondary-bg-color;
-            border-radius: 8px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @media only screen and (max-width: 992px) {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        width: 130px;
+        padding: 15px;
+        font-weight: 800;
+        color: #fff;
+        background: $secondary-bg-color;
+        border-radius: 8px;
+        &:hover {
+            @include hover-bg(#a97c20, .3s);
+        }
+        @media only screen and (max-width: 768px) {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+        &--white {
+            width: 215px;
+            padding: 25px;
+            color: $secondary-bg-color;
+            background: #fff;
+            border: 1px solid $secondary-bg-color;
             &:hover {
-                @include hover-bg(#a97c20, .3s);
+                @include hover-bg(#e6e6e6, .3s);
             }
             @media only screen and (max-width: 768px) {
-                margin-right: 0;
-                margin-bottom: 15px;
+                margin-bottom: 0;
             }
         }
     }
@@ -149,11 +162,9 @@
 }
 
 .about {
-    padding-left: 25px;
-    margin: 60px 0;
+    padding: 60px 0 60px 25px;
     @media only screen and (max-width: 576px) {
-        padding-left: 0;
-        margin: 15px 0;
+        padding: 30px 0;
     }
     &__title {
         margin-bottom: 30px;
@@ -169,8 +180,10 @@
 }
 
 .services {
+    margin-bottom: 70px;
     @media only screen and (max-width: 768px) {
         padding-left: 0;
+        margin-bottom: 20px;
     }
     &__title {
         padding-left: 25px;
@@ -219,6 +232,7 @@
 }
 
 .advantages {
+    margin-bottom: 70px;
     &__title {
         padding-left: 25px;
         margin-bottom: 20px;
@@ -237,5 +251,198 @@
     }
     &__text {
         line-height: 1.5;
+    }
+}
+
+.placement {
+    &__title {
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+}
+
+.placement-item {
+    position: relative;
+    margin-bottom: 30px;
+    background: #fff;
+    &__title {
+        margin: 20px 0;
+        color: #000;
+    }
+
+    &__location {
+        margin-bottom: 20px;
+        color: #a6a6a6;
+    }
+
+    &__btn {
+        display: inline-block;
+        padding: 10px 20px;  
+        color: #CC9933;
+        border: 1px solid #CC9933;
+        border-radius: 20px;
+        &:hover {
+            background: #f5f5f5;
+            @include hover-default(#ab8029, .3s);
+        }
+    }
+
+    &__link {
+        position: relative;
+        font-size: 22px;
+        color: #fff;
+        &:hover {
+            @include transition-ease(all, .3s);
+            padding-bottom: 1px;
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+    .placement-link-wrap {
+        position: absolute;
+        bottom: 50px;
+        z-index: 1;
+        padding: 0px 40px;
+    }
+}
+
+.placement-wrapper {
+    padding: 25px 40px 27px;
+}
+
+.placement-price {
+    @media only screen and (max-width: 768px) {
+        margin-bottom: 10px;
+    }
+    font-size: 24px;
+    line-height: 1em;
+    color: #000;
+    &:before {
+        margin-right: 5px;
+        font-size: 15px;
+        color: #A6A6A6;
+        content: 'от';
+    }
+    
+    &:after {
+        margin-left: 5px;
+        font-size: 15px;
+        content: '/ ночь';
+    }
+}
+
+.placement-stars {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    &__item {
+        font-size: 24px;
+        color: #E6E6E6;
+        cursor: pointer;
+        @include transition-ease(all, .3s);
+        &:hover,
+        &:hover ~ .placement-stars__item {
+            color: #E9CE93;
+        }
+    }
+    &[data-total-value="1"] .placement-stars__item:nth-child(n+5),
+    &[data-total-value="2"] .placement-stars__item:nth-child(n+4),
+    &[data-total-value="3"] .placement-stars__item:nth-child(n+3),
+    &[data-total-value="4"] .placement-stars__item:nth-child(n+2),
+    &[data-total-value="5"] .placement-stars__item:nth-child(n+1) {
+        color: #E9CE93;
+    }
+}
+
+.contacts {
+    &__title {
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+}
+
+.contacts-info {
+    padding: 40px;
+    background: #fff;
+    @include border-rad(12px);
+    @media only screen and (max-width: 768px) {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    &__wrap {
+        padding-bottom: 25px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #dadada;
+    }
+
+    &__title {
+        color: #666;
+        @media only screen and (max-width: 768px) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__link-wrap {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        color: $secondary-bg-color;
+    }
+
+    &__tel {
+        display: block;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text {
+        &--gray {
+            color: #ababab;
+        }
+    }
+}
+
+.write-us {
+    text-align: center;
+    &__title {
+        display: inline-block;
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+}
+
+.form-write-us {
+    &__input {
+        display: inline-block;
+        width: 340px;
+        &[name="name"],
+        &[name="tel"] {
+            padding: 30px;
+            @media only screen and (max-width: 768px) {
+               padding: 15px;
+            }
+        }
+
+        &[name="message"] {
+            padding: 50px 30px;
+            @media only screen and (max-width: 768px) {
+                padding: 25px 15px;
+            }
+        }
+    }
+
+    &__btn-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__btn {
+        display: block;
+        width: 340px;
     }
 }
