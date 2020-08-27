@@ -337,19 +337,31 @@
     &__item {
         font-size: 24px;
         color: #E6E6E6;
-        cursor: pointer;
-        @include transition-ease(all, .3s);
-        &:hover,
-        &:hover ~ .placement-stars__item {
-            color: #E9CE93;
-        }
     }
-    &[data-total-value="1"] .placement-stars__item:nth-child(n+5),
-    &[data-total-value="2"] .placement-stars__item:nth-child(n+4),
-    &[data-total-value="3"] .placement-stars__item:nth-child(n+3),
-    &[data-total-value="4"] .placement-stars__item:nth-child(n+2),
-    &[data-total-value="5"] .placement-stars__item:nth-child(n+1) {
-        color: #E9CE93;
+}
+.rating5 {
+    .placement-stars__item {
+        color: $rating-color;
+    }
+}
+.rating4 {
+    .placement-stars__item + .placement-stars__item:nth-child(n+2) {
+        color: $rating-color;
+    }
+}
+.rating3 {
+    .placement-stars__item + .placement-stars__item:nth-child(n+3) {
+        color: $rating-color;
+    }
+}
+.rating2 {
+    .placement-stars__item + .placement-stars__item:nth-child(n+4) {
+        color: $rating-color;
+    }
+}
+.rating1 {
+    .placement-stars__item + .placement-stars__item:nth-child(n+1) {
+        color: $rating-color
     }
 }
 
