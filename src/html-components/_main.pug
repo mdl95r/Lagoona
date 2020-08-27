@@ -72,12 +72,9 @@ main.main
                                         .col-md-7
                                             .placement-price #{item.price}
                                         .col-md-5.align-self-center
-                                            .placement-stars(aria-label="Рейтинг отеля", data-total-value="0")
-                                                .placement-stars__item(aria-label='Ужасно', data-item-value="5") ★
-                                                .placement-stars__item(aria-label='Плохо', data-item-value="4") ★
-                                                .placement-stars__item(aria-label='Удовлетворительно', data-item-value="3") ★
-                                                .placement-stars__item(aria-label='Хорошо', data-item-value="2") ★
-                                                .placement-stars__item(aria-label='Отлично', data-item-value="1") ★
+                                            .placement-stars(aria-label=`Рейтинг отеля:${item.ratinglabel}` class=`${item.ratingClass}`)
+                                                each item in ratings
+                                                    .placement-stars__item(aria-label=`${item}`) ★
                                     .placement-item__title #{item.title}
                                     .placement-item__location #{item.location}
                                     a.placement-item__btn(href="#") Номера
