@@ -25,8 +25,8 @@ main.main
                         a.offer-block__link(href="#") Подробнее
                         .offer-block__img-wrap
                             picture
-                                source(type="image/webp", data-src="img/22@1X.webp")
-                                img.lazy.offer-block__img(alt="Спецпредложение", data-src="img/22@1X.jpg")
+                                source(type="image/webp", data-src="img/22@1X.webp", srcset="img/22@1X.webp")
+                                img.lazy.offer-block__img(alt="Спецпредложение", data-src="img/22@1X.jpg", src="img/22@1X.jpg")
         .row
             .col-md-10.col-sm-12
                 section.about
@@ -34,39 +34,39 @@ main.main
                     p.about__text Идейные соображения высшего порядка, а также сложившаяся структура организации влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям. Равным образом сложившаяся структура организации требуют определения и уточнения существенных финансовых и административных условий.
         section.services
             h2.services__title Услуги
-            ul.service__list
+            .service__list
                 .row
                     each service in services
                         .col-md-6
-                            li.services-item
+                            .services-item
                                 picture
-                                    source(type="image/webp", data-src=`${service.img}.webp`)
-                                    img.lazy.services-item__img(alt=`${service.link}`, data-src=`${service.img}.jpg`)
+                                    source(type="image/webp", data-src=`${service.img}.webp`, srcset=`${service.img}.webp`)
+                                    img.lazy.services-item__img(alt=`${service.link}`, data-src=`${service.img}.jpg`, src=`${service.img}.jpg`)
                                 .services-item__wrap
                                     h3.services-item__title
                                         a.services-item__link(href="#") #{service.link}
                                     p.services-item__text #{service.text}
         section.advantages
             h2.advantages__title Преимущества
-            ul.advantages__list
+            .advantages__list
                 .row
                     each item in advantages
                         .col-lg-3.col-md-6.justify-content-center
-                            li.advantages-item
+                            .advantages-item
                                 picture
-                                    source(type="image/webp", data-src=`${item.img}.webp`)
-                                    img.lazy.advantages-item__img(alt=`${item.text}`, data-src=`${item.img}.png`)
+                                    source(type="image/webp", data-src=`${item.img}.webp`, srcset=`${item.img}.webp`)
+                                    img.lazy.advantages-item__img(alt=`${item.text}`, data-src=`${item.img}.png`, src=`${item.img}.png`)
                                 p.advantages-item__text #{item.text}
         section.placement
             h2.placement__title Размещение
-            ul.placement__list
+            .placement__list
                 .row
                     each item in placement
                         .col-lg-4.col-md-6
-                            li.placement-item
+                            .placement-item
                                 picture
-                                    source(type="image/webp", data-src=`${item.img}.webp`)
-                                    img.lazy.placement-item__img(alt=`${item.title}`, data-src=`${item.img}.jpg`)
+                                    source(type="image/webp", data-src=`${item.img}.webp`, srcset=`${item.img}.webp`)
+                                    img.lazy.placement-item__img(alt=`${item.title}`, data-src=`${item.img}.jpg`, src=`${item.img}.jpg`)
                                 .placement-wrapper
                                     .row
                                         .col-md-7
@@ -79,12 +79,12 @@ main.main
                                     .placement-item__location #{item.location}
                                     a.placement-item__btn(href="#") Номера
                     .col-lg-4.col-md-6
-                        li.placement-item
+                        .placement-item
                             picture
-                                source(type="image/webp", data-src="img/41.webp")
-                                img.lazy.placement-item__img(alt="Подробнее", data-src="img/41.jpg")
-                                .placement-link-wrap
-                                    a.placement-item__link(href="#") Посмотреть все варианты
+                                source(type="image/webp", data-src="img/41.webp", srcset="img/41.webp")
+                                img.lazy.placement-item__img(alt="Подробнее", data-src="img/41.jpg", src="img/41.jpg")
+                            .placement-link-wrap
+                                a.placement-item__link(href="#") Посмотреть все варианты
         section.contacts
             h2.contacts__title Контакты
             .row

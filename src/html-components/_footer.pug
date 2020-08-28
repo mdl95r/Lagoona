@@ -13,8 +13,8 @@
                 a.footer__link(href="mailto:lg.oona@mail.ru ") lg.oona@mail.ru 
                 a.footer__link(href="mailto:hotels.ln@mail.ru") hotels.ln@mail.ru
                 picture
-                    source(type="image/webp", data-src="img/logo-footer.webp")
-                    img.lazy.footer__logo(alt="Логотип в футере", data-src="img/logo-footer.png")
+                    source(type="image/webp", data-src="img/logo-footer.webp", srcset="img/logo-footer.webp")
+                    img.lazy.footer__logo(alt="Логотип в футере", data-src="img/logo-footer.png", src="img/logo-footer.png")
             .col-lg-2
                 ul.socials-list
                     each social in ['tripadvisor.ru', 'twitter.com', 'ru-ru.facebook.com', 'vk.com', 'google.com']
