@@ -7,8 +7,8 @@ header.header-main
                 .col-md-3
                     .top-bar__logo
                         picture
-                            source(type="image/webp", data-src="img/Logo@1X.webp")
-                            img.lazy.top-bar__img(alt="Логотип", data-src="img/Logo@1X.png")
+                            source(type="image/webp", data-src="img/Logo@1X.webp", srcset="img/Logo@1X.webp")
+                            img.lazy.top-bar__img(alt="Логотип", data-src="img/Logo@1X.png", src="img/Logo@1X.png")
                 .col-md-3.align-self-center
                     a.top-bar__contacts(href="tel:+74953225448") +7 (495) 322-54-48
                 .col-md-6.align-self-center
@@ -23,6 +23,6 @@ header.header-main
                                     a.menu__link(href="#")= item
                         button.burger-btn(type="button")
                 .col-lg-5
-                    form.form.form-header(action="")
+                    form.form.form-header(action="#")
                         input.form__input.form-header__input(type="search" placeholder="Поиск")
                         button.form__btn.form-header__btn
