@@ -52,15 +52,31 @@
     &__list {
         display: flex;
         justify-content: space-between;
-        
+        padding: 10px;
         @media only screen and (max-width: 768px) {
             position: absolute;
             top: 38px;
-            left: 0px;
+            left: -999px;
             z-index: 1;
-            display: none;
-            width: 100%;
+            width: calc(100% + 10px);
             background: #fff;
+            border: 1px solid #dedede;
+            @include border-rad(8px);
+            @include transition-ease(left, .5s);
+        }
+    }
+
+    &__item {
+        @media only screen and (max-width: 768px) {
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 1px solid #dedede;
+            &:last-child {
+                padding: 0;
+                margin: 0;
+                border-bottom: none;
+            }
         }
     }
 
