@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const burgerBtn = document.querySelector('.js-burger-btn');
     const menuList = document.querySelector('.menu__list');
+    const formBtn = document.querySelectorAll('.form-main__btn');
 
     const lazyLoadInstance = new LazyLoad({
         elements_selector: ".lazy",
@@ -43,4 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 300);
         }
     });
+
+    formBtn.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+        })
+    })
 });
